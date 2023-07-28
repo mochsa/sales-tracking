@@ -23,7 +23,7 @@
                                 <div class="card-body">
 
                                     <!-- Form Input -->
-                                    <?= form_open('dbmaps/input'); ?>
+                                    <?= form_open('dbmaps/add'); ?>
                                     <div class="form-group">
                                         <label>Nama Maps</label>
                                         <div class="input-group">
@@ -32,7 +32,7 @@
                                                     <i class="fas fa-file-signature"></i>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control" name="nama_maps" placeholder="Nama Maps" required>
+                                            <input type="text" class="form-control" name="nama_maps" placeholder="Nama Maps" required autofocus>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -65,7 +65,7 @@
                                                     <i class="fas fa-map-marker-alt"></i>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control" name="latitude" placeholder="Latitude Maps" required disabled>
+                                            <input type="text" class="form-control" name="latitude" placeholder="Latitude Maps" required readonly>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -76,7 +76,7 @@
                                                     <i class="fas fa-map-marker-alt"></i>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control" name="longitude" placeholder="Longitude Maps" required disabled>
+                                            <input type="text" class="form-control" name="longitude" placeholder="Longitude Maps" required readonly>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -85,9 +85,11 @@
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary" type="submit">Save</button>
-                                        <button class="btn btn-danger" type="reset">Cancel</button>
+                                        <button class="btn btn-danger" type="reset" id="toastr-1">Cancel</button>
                                     </div>
                                     <?= form_close(); ?>
+                                    <!-- Form Input -->
+
                                 </div>
                             </div>
                         </div>

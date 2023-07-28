@@ -12,7 +12,8 @@
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
-    <!-- <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css"> -->
+    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/izitoast/dist/css/iziToast.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">

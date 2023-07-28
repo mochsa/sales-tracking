@@ -26,31 +26,26 @@ class Dbmaps extends CI_Controller
         $this->load->view('template/v_wrapper', $data, FALSE);
     }
 
-    // Create New Data
-    public function input()
+    public function add()
     {
         // ------------------ Google Maps ------------------
-        // Config Maps
         $config = array(
             'center' => '-6.981782663363796, 110.40922272688273',
             'zoom' => '15',
             'map_height' => '600px'
         );
-        // Mengeksekusi Config Maps + Show Maps
         $this->googlemaps->initialize($config);
-
-        // Setting Markers
+        //--------------------------------------------------
         $marker = array(
             'position' => '-6.981782663363796, 110.40922272688273',
             'draggable' => true,
             'ondragend' => 'setToForm(event.latLng.lat(), event.latLng.lng());'
         );
-        // Mengeksekusi Markers
         $this->googlemaps->add_marker($marker);
-        // ------------------ Google Maps ------------------
+        //--------------------------------------------------
+
 
         // ------------------ Form Validation ------------------
-        // Buatkan form validation
         $this->form_validation->set_rules('nama_maps', 'Nama Maps', 'required');
         $this->form_validation->set_rules('no_telpon', 'Nomor Telpon', 'required');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
@@ -71,7 +66,7 @@ class Dbmaps extends CI_Controller
 
         // Jika form validation berhasil
         else {
-            $data = array(
+            $dataInsert = array(
                 'nama_maps' => $this->input->post('nama_maps'),
                 'no_telpon' => $this->input->post('no_telpon'),
                 'alamat' => $this->input->post('alamat'),
@@ -79,11 +74,10 @@ class Dbmaps extends CI_Controller
                 'longitude' => $this->input->post('longitude'),
                 'deskripsi' => $this->input->post('deskripsi')
             );
-            $this->m_dbmaps->input($data);
-            $this->session->set_flashdata('pesan', 'Data berhasil ditambahkan!');
+            $this->m_dbmaps->input($dataInsert);
+            $this->session->set_flashdata('pesan', 'Data telah ditambahkan.');
             redirect('dbmaps');
         }
-        // ------------------ Form Validation ------------------
     }
 }
 

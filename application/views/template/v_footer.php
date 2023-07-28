@@ -20,14 +20,12 @@
 <!-- JS Libraies -->
 <script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-<!-- <script src="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script> -->
+<script src="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/izitoast/dist/js/iziToast.js"></script>
 
 <!-- Template JS File -->
 <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
 <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
-
-<!-- Needed Page Specific JS File -->
-<script src="<?= base_url() ?>/template/assets/js/page/modules-datatables.js"></script>
 
 <!-- Scripting JS -->
 <script>
@@ -36,6 +34,38 @@
         $('input[name="longitude"]').val(longitude); // Set input lng
     }
 </script>
+
+<script>
+    $("#toastr-1").click(function() {
+        iziToast.info({
+            title: "Berhasil",
+            message: "Data telah di Reset",
+            position: "topRight",
+            displayMode: "replace",
+        });
+    });
+</script>
+
+<script>
+    $("#table-1").dataTable({
+        columnDefs: [{
+            sortable: false,
+            targets: [7]
+        }],
+    });
+</script>
+
+<?php if ($this->session->flashdata('success')) : ?>
+    <script>
+        $(document).ready(function() {
+            iziToast.success({
+                title: "Success",
+                message: "<?= $this->session->flashdata('success') ?>",
+                position: "topRight",
+            });
+        });
+    </script>
+<?php endif; ?>
 
 </body>
 

@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <h4>Data Maps</h4>
                             <div class="card-header-action">
-                                <a href="<?= base_url('dbmaps/input') ?>" class="btn btn-primary">Add <i class="fas fa-plus"></i></a>
+                                <a href="<?= base_url('dbmaps/add') ?>" class="btn btn-primary">Add <i class="fas fa-plus"></i></a>
                             </div>
                         </div>
                         <div class="card-body">

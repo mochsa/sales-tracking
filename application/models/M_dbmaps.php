@@ -10,7 +10,7 @@ class M_dbmaps extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_dbmaps');
-        $this->db->order_by('id_maps', 'desc');
+        $this->db->order_by('id_maps', 'asc');
         return $this->db->get()->result();
     }
 
