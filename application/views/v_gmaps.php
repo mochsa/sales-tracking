@@ -3,7 +3,7 @@
         <div class="section-header">
             <h1><?= $section; ?></h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?= site_url('home') ?>">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="<?= site_url('user') ?>">Dashboard</a></div>
                 <div class="breadcrumb-item">Google Maps</div>
             </div>
         </div>

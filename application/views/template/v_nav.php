@@ -18,16 +18,43 @@
 
         <!-- Main Menu Sidebar -->
         <ul class="sidebar-menu">
-            <li class="menu-header">Main Menu</li>
-            <li class="active"><a class="nav-link" href="<?= site_url() ?>"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
-            <li class=""><a class="nav-link" href="<?= site_url('gmaps') ?>"><i class="fas fa-map-marker-alt"></i><span>Google Maps</span></a></li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-database"></i><span>Database</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="#">Database Account</a></li>
-                    <li><a class="nav-link" href="<?= base_url('dbmaps') ?>">Database Maps</a></li>
-                </ul>
-            </li>
+            <?php
+            $role_id = $this->session->userdata('role_id');
+            $querryMenu = "SELECT `user_menu`.`id`, `menu`
+                            FROM `user_menu` JOIN `user_access_menu`
+                            ON `user_menu`.`id` = `user_access_menu`.`menu_id`
+                            WHERE `user_access_menu`.`role_id` = $role_id
+                            ORDER BY `user_access_menu`.`menu_id` ASC
+                            ";
+            $menu = $this->db->query($querryMenu)->result_array();
+            ?>
+
+            <!-- Looping Menu -->
+            <?php foreach ($menu as $m) : ?>
+                <li class="menu-header">
+                    <?= $m['menu'] ?>
+                </li>
+
+                <!-- Sub Menu -->
+                <?php
+                $menuId = $m['id'];
+                $querrySubMenu = "SELECT *
+                                    FROM `user_sub_menu` JOIN `user_menu`
+                                    ON `user_sub_menu`.`menu_id` = `user_menu`.`id`
+                                    WHERE `user_sub_menu`.`menu_id` = $menuId
+                                    AND `user_sub_menu`.`is_active` = 1
+                                    ";
+                $subMenu = $this->db->query($querrySubMenu)->result_array();
+                ?>
+                <?php foreach ($subMenu as $sm) : ?>
+                    <li>
+                        <a class="nav-link" href="<?= site_url($sm['url']); ?>">
+                            <i class="<?= $sm['icon']; ?>"></i>
+                            <span><?= $sm['title']; ?></span>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
         </ul>
 
         <!-- Sidebar Footer -->

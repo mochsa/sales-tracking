@@ -5,6 +5,7 @@
         </div>
 
         <div class="section-body">
+            <div id="flash" data-flash="<?= $this->session->flashdata('pesan'); ?>"></div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -42,10 +43,10 @@
                                                 <td><?= $value->deskripsi; ?></td>
                                                 <td class="text-center">
                                                     <div class="d-flex">
-                                                        <a href="#" class="btn btn-sm btn-warning">
+                                                        <a href="<?= base_url('dbmaps/edit/' . $value->id_maps); ?>" class="btn btn-sm btn-warning">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-sm btn-danger">
+                                                        <a href="<?= base_url('dbmaps/delete/' . $value->id_maps); ?>" class="btn btn-sm btn-danger" id="tombol-hapus">
                                                             <i class="fas fa-trash"></i>
                                                         </a>
                                                     </div>

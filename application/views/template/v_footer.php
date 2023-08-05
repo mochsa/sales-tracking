@@ -18,10 +18,11 @@
 <script src="<?= base_url() ?>/template/assets/js/stisla.js"></script>
 
 <!-- JS Libraies -->
-<script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/datatables/media/js/jquery.dataTables.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/izitoast/dist/js/iziToast.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- Template JS File -->
 <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
@@ -33,9 +34,7 @@
         $('input[name="latitude"]').val(latitude); // Set input lat
         $('input[name="longitude"]').val(longitude); // Set input lng
     }
-</script>
 
-<script>
     $("#toastr-1").click(function() {
         iziToast.info({
             title: "Berhasil",
@@ -44,29 +43,44 @@
             displayMode: "replace",
         });
     });
-</script>
 
-<script>
     $("#table-1").dataTable({
         columnDefs: [{
             sortable: false,
-            targets: [7]
+            targets: [0]
         }],
     });
 </script>
 
-<?php if ($this->session->flashdata('success')) : ?>
-    <script>
-        $(document).ready(function() {
-            iziToast.success({
-                title: "Success",
-                message: "<?= $this->session->flashdata('success') ?>",
-                position: "topRight",
-            });
+<script>
+    var flash = $('#flash').data('flash');
+    if (flash) {
+        iziToast.success({
+            title: 'Berhasil',
+            message: flash,
+            position: 'topRight',
+            displayMode: 'replace',
         });
-    </script>
-<?php endif; ?>
+    }
 
+    $(document).on('click', '#tombol-hapus', function(e) {
+        e.preventDefault();
+        var link = $(this).attr('href');
+
+        swal({
+                title: 'Yakin ingin menghapus data ini?',
+                text: 'Data yang sudah dihapus tidak dapat dikembalikan lagi!',
+                icon: 'warning',
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location = link;
+                }
+            });
+    });
+</script>
 </body>
 
 </html>
