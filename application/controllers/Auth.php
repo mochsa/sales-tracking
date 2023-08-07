@@ -45,15 +45,16 @@ class Auth extends CI_Controller
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
-
-                    // Cek role_id
-                    if ($user['role_id'] == 1) {
-                        $this->session->set_flashdata('pesansukses', 'Selamat datang ' . $user['name'] . '!');
-                        redirect('admin');
-                    } else {
-                        $this->session->set_flashdata('pesansukses', 'Selamat datang ' . $user['name'] . '!');
-                        redirect('user');
-                    }
+                    $this->session->set_flashdata('pesansukses', 'Selamat datang ' . $user['name'] . '!');
+                    redirect('dashboard');
+                    // // Cek role_id
+                    // if ($user['role_id'] == 1) {
+                    //     $this->session->set_flashdata('pesansukses', 'Selamat datang ' . $user['name'] . '!');
+                    //     redirect('Dashboard');
+                    // } else {
+                    //     $this->session->set_flashdata('pesansukses', 'Selamat datang ' . $user['name'] . '!');
+                    //     redirect('user');
+                    // }
                 } else {
                     $this->session->set_flashdata('pesangagal', 'Password salah!');
                     redirect('auth');
@@ -118,5 +119,10 @@ class Auth extends CI_Controller
 
         $this->session->set_flashdata('pesansukses', 'Anda berhasil logout!');
         redirect('auth');
+    }
+
+    public function blocked()
+    {
+        echo "Access Blocked!";
     }
 }

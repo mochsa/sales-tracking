@@ -20,18 +20,20 @@
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Role</th>
-                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php $no = 1;
-                                        foreach ($dbaccount as $key => $value) { ?>
+                                        foreach ($dbaccount as $dbac) { ?>
                                             <tr>
                                                 <td class="text-center"><?= $no++; ?></td>
-                                                <td><?= $value->name; ?></td>
-                                                <td><?= $value->email; ?></td>
-                                                <td class="text-center"><?= $value->role_id; ?></td>
-                                                <td class="text-center"><?= $value->is_active; ?></td>
+                                                <td><?= $dbac['name']; ?></td>
+                                                <td><?= $dbac['email']; ?></td>
+                                                <td class="text-center">
+                                                    <div class="badge <?= $dbac['role_id'] === '1' ? 'badge-primary' : 'badge-light' ?>">
+                                                        <?= $dbac['role']; ?>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

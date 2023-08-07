@@ -30,9 +30,27 @@
 
 <!-- Scripting JS -->
 <script>
-    function setToForm(latitude, longitude) {
+    function setToForm(latitude, longitude, marker) {
         $('input[name="latitude"]').val(latitude); // Set input lat
         $('input[name="longitude"]').val(longitude); // Set input lng
+
+        // Lakukan reverse geocoding untuk mendapatkan alamat
+        var geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(latitude, longitude);
+
+        geocoder.geocode({
+            'location': latlng
+        }, function(results, status) {
+            if (status === 'OK') {
+                if (results[0]) {
+                    var address = results[0].formatted_address;
+                    $('input[name="alamat"]').val(address); // Set input alamat
+
+                    // Update marker title dengan alamat
+                    marker.setTitle(address);
+                }
+            }
+        });
     }
 
     $("#toastr-1").click(function() {

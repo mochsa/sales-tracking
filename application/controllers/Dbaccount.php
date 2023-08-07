@@ -11,13 +11,14 @@ class Dbaccount extends CI_Controller
         // Load Dependencies
         $this->load->library('googlemaps');
         $this->load->model('m_dbaccount');
+        is_logged_in();
     }
 
     // Get All Data
     public function index()
     {
         $data = array(
-            'title' => 'Database Account &mdash; Sales Tracking',
+            'title' => 'Account',
             'section' => 'Database Account',
             'user' => $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(),
             'map' => $this->googlemaps->create_map(),

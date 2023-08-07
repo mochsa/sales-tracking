@@ -11,13 +11,14 @@ class Dbmaps extends CI_Controller
         // Load Dependencies
         $this->load->library('googlemaps');
         $this->load->model('m_dbmaps');
+        is_logged_in();
     }
 
     // Get All Data
     public function index()
     {
         $data = array(
-            'title' => 'Database Maps &mdash; Sales Tracking',
+            'title' => 'Maps',
             'section' => 'Database Maps',
             'user' => $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array(),
             'map' => $this->googlemaps->create_map(),

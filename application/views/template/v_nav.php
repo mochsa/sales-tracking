@@ -47,14 +47,18 @@
                 $subMenu = $this->db->query($querrySubMenu)->result_array();
                 ?>
                 <?php foreach ($subMenu as $sm) : ?>
-                    <li>
+                    <?php if ($title == $sm['title']) : ?>
+                        <li class="active">
+                        <?php else : ?>
+                        <li>
+                        <?php endif; ?>
                         <a class="nav-link" href="<?= site_url($sm['url']); ?>">
                             <i class="<?= $sm['icon']; ?>"></i>
                             <span><?= $sm['title']; ?></span>
                         </a>
-                    </li>
+                        </li>
+                    <?php endforeach; ?>
                 <?php endforeach; ?>
-            <?php endforeach; ?>
         </ul>
 
         <!-- Sidebar Footer -->
