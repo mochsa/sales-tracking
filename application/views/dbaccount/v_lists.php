@@ -19,6 +19,7 @@
                                             <th>No</th>
                                             <th>Nama</th>
                                             <th>Email</th>
+                                            <th>Tanggal Masuk</th>
                                             <th>Role</th>
                                         </tr>
                                     </thead>
@@ -29,6 +30,7 @@
                                                 <td class="text-center"><?= $no++; ?></td>
                                                 <td><?= $dbac['name']; ?></td>
                                                 <td><?= $dbac['email']; ?></td>
+                                                <td class="text-center"><?= gmdate('d F Y', $dbac['date_created']); ?></td>
                                                 <td class="text-center">
                                                     <div class="badge <?= $dbac['role_id'] === '1' ? 'badge-primary' : 'badge-light' ?>">
                                                         <?= $dbac['role']; ?>
