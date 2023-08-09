@@ -18,6 +18,7 @@
                                         <tr class="text-center">
                                             <th>No</th>
                                             <th>Nama</th>
+                                            <th>Foto</th>
                                             <th>Email</th>
                                             <th>Tanggal Masuk</th>
                                             <th>Role</th>
@@ -27,10 +28,21 @@
                                         <?php $no = 1;
                                         foreach ($dbaccount as $dbac) { ?>
                                             <tr>
-                                                <td class="text-center"><?= $no++; ?></td>
-                                                <td><?= $dbac['name']; ?></td>
-                                                <td><?= $dbac['email']; ?></td>
-                                                <td class="text-center"><?= gmdate('d F Y', $dbac['date_created']); ?></td>
+                                                <td class="text-center">
+                                                    <?= $no++; ?>
+                                                </td>
+                                                <td>
+                                                    <?= $dbac['name']; ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <img alt="image" src="<?= base_url('/template/assets/img/profile/') . $dbac['image']; ?>" class="bunder" width="35">
+                                                </td>
+                                                <td>
+                                                    <?= $dbac['email']; ?>
+                                                </td>
+                                                <td class="text-center">
+                                                    <?= gmdate('d F Y', $dbac['date_created']); ?>
+                                                </td>
                                                 <td class="text-center">
                                                     <div class="badge <?= $dbac['role_id'] === '1' ? 'badge-primary' : 'badge-light' ?>">
                                                         <?= $dbac['role']; ?>

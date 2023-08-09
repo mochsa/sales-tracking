@@ -5,6 +5,7 @@
         </div>
         <div class="section-body">
             <div id="flash" data-flash="<?= $this->session->flashdata('pesansukses'); ?>"></div>
+            <div id="flashgagal" data-flashgagal="<?= $this->session->flashdata('pesangagal'); ?>"></div>
             <div class="row mt-sm-4">
                 <div class="col-12 mb-4">
                     <div class="hero text-white hero-bg-image hero-bg-parallax" style="background-attachment: scroll;" data-background="<?= base_url('/template/assets/img/unsplash/google-maps-1.png'); ?>">

@@ -23,6 +23,10 @@
 <script src="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/izitoast/dist/js/iziToast.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 <!-- Template JS File -->
 <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
@@ -68,8 +72,30 @@
             targets: [0]
         }],
     });
-</script>
 
+    $("select").selectric();
+    $.uploadPreview({
+        input_field: "#image-upload", // Default: .image-upload
+        preview_box: "#image-preview", // Default: .image-preview
+        label_field: "#image-label", // Default: .image-label
+        label_default: "Choose File", // Default: Choose File
+        label_selected: "Change File", // Default: Change File
+        no_label: false, // Default: false
+        success_callback: null // Default: null
+    });
+    $(".inputtags").tagsinput('items');
+</script>
+<script>
+    var flashgagal = $('#flashgagal').data('flashgagal');
+    if (flashgagal) {
+        iziToast.error({
+            title: 'Gagal',
+            message: flashgagal,
+            position: 'topRight',
+            displayMode: 'replace',
+        });
+    }
+</script>
 <script>
     var flash = $('#flash').data('flash');
     if (flash) {

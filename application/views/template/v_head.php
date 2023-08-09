@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/izitoast/dist/css/iziToast.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/selectric/public/selectric.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
@@ -21,4 +24,30 @@
 
     <!-- JS Script Libraries -->
     <?= $map['js']; ?>
+
+    <style>
+        .bunder {
+            object-fit: cover;
+            object-position: 50% 0;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+        }
+
+        .bunder2 {
+            object-fit: cover;
+            object-position: 50% 0;
+            border-radius: 50%;
+            height: 100px;
+        }
+
+        .img-thumbnail {
+            object-fit: cover;
+            object-position: 50% 0;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            width: 250px;
+            height: 250px
+        }
+    </style>
 </head>

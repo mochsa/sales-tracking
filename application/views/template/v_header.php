@@ -16,11 +16,11 @@
                     <!-- Profile Dropdown Menu -->
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?= base_url('/template/assets/img/avatar/') . $user['image']; ?>" class="rounded-circle mr-1">
+                            <img alt="image" src="<?= base_url('/template/assets/img/profile/') . $user['image']; ?>" class="bunder mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, <?= $user['name']; ?></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="features-profile.html" class="dropdown-item has-icon">
+                            <a href="<?= base_url('dbaccount/edit'); ?>" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
                             </a>
                             <a href="features-activities.html" class="dropdown-item has-icon">

@@ -5,6 +5,7 @@
         </div>
 
         <div class="section-body">
+            <div id="flash" data-flash="<?= $this->session->flashdata('pesan'); ?>"></div>
             <div id="flash" data-flash="<?= $this->session->flashdata('pesansukses'); ?>"></div>
             <h2 class="section-title">Hi, <?= $user['name']; ?></h2>
             <p class="section-lead">
@@ -15,7 +16,7 @@
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
                         <div class="profile-widget-header">
-                            <img alt="image" src="<?= base_url('/template/assets/img/avatar/') . $user['image']; ?>" class="rounded-circle profile-widget-picture">
+                            <img alt="image" src="<?= base_url('/template/assets/img/profile/') . $user['image']; ?>" class="bunder2 profile-widget-picture">
                             <div class="profile-widget-items">
                                 <div class="profile-widget-item">
                                     <div class="profile-widget-item-label">Tugas</div>
