@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2023 at 08:37 PM
+-- Generation Time: Aug 09, 2023 at 03:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,8 +44,7 @@ CREATE TABLE `tbl_dbmaps` (
 INSERT INTO `tbl_dbmaps` (`id_maps`, `nama_maps`, `no_telpon`, `alamat`, `latitude`, `longitude`, `deskripsi`) VALUES
 (3, 'Toko A', '0821201012', 'Komplek Masjid Agung Kauman, 2CHF+528, Bangunharjo, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50139, Indonesia', '-6.972198213119912', '110.42265522962933', 'Toko pemilik Bapak Suratno penjual Rokok'),
 (4, 'Toko B', '08560201023', 'Jl. Mayor Jend. D.I. Panjaitan No.9, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134, Indonesia', '-6.985786775556099', '110.42063820845013', 'Toko milik Bu Sutarmi penjual toko kelontong'),
-(5, 'Smart Printer', '0854644887922', 'Jl. Mugas Dalam IX No.5, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249, Indonesia', '-6.99166509090616', '110.41535962110882', 'Toko printer bapak Jono customer tinta'),
-(6, 'Karangan Bunga', '08879945621', 'Jl. Suyudono No.158, Barusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50245, Indonesia', '-6.989407485784443', '110.4042445469511', 'Toko bunga Bu Sri customer kayu');
+(5, 'Smart Printer', '0854644887922', 'Jl. Mugas Dalam IX No.5, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249, Indonesia', '-6.99166509090616', '110.41535962110882', 'Toko printer bapak Jono customer tinta');
 
 -- --------------------------------------------------------
 
@@ -69,8 +68,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'Moch Syafrizal Azhar', 'mochsyafrizalazhar@gmail.com', 'default.png', '$2y$10$9jIlcwHwPU8VaQ2t.sNSvOQMll9lNaorzpYsJOAv6Vs/Z4d4tg6QC', 1, 1, 1691166752),
-(2, 'Doddy Sumargo', 'hahaha250901@gmail.com', 'default.png', '$2y$10$oCTIr83XbR1hTXvVbw/67eP/Lf5jdbxiPQa1FntUPCTgunCj.1va6', 2, 1, 1691167350),
+(1, 'Moch Syafrizal Azhar', 'mochsyafrizalazhar@gmail.com', 'Profile-2.png', '$2y$10$9jIlcwHwPU8VaQ2t.sNSvOQMll9lNaorzpYsJOAv6Vs/Z4d4tg6QC', 1, 1, 1691166752),
+(2, 'Alexander Tejo', 'hahaha250901@gmail.com', 'profile-1.png', '$2y$10$oCTIr83XbR1hTXvVbw/67eP/Lf5jdbxiPQa1FntUPCTgunCj.1va6', 2, 1, 1691167350),
 (3, 'Sukarni Tejo', 'tejo@gmail.com', 'default.png', '$2y$10$uoVUzi9vaRtNzk9mUKxba.6xmC89HzrecG96LltlkK8mUOeLCDWwO', 2, 1, 1691346760),
 (4, 'Gerry Hendra', 'gerry@gmail.com', 'default.png', '$2y$10$YX0xLzA.zMlOYLLArqb8.OUCrRcLFYUIjLiPtKdMXgovc2/9AQnp.', 2, 1, 1691347797);
 
