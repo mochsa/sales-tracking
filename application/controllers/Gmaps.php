@@ -20,13 +20,12 @@ class Gmaps extends CI_Controller
             'center' => '-6.981782663363796, 110.40922272688273',
             'zoom' => 'auto',
             'map_height' => '600px',
-            'directions' => TRUE,
-            'directionsStart' => "{$dbmaps[2]->latitude},{$dbmaps[2]->longitude}",
-            'directionsEnd' => "{$dbmaps[0]->latitude},{$dbmaps[0]->longitude}",
-            'directionsWaypointArray' => array(
-                "{$dbmaps[1]->latitude},{$dbmaps[1]->longitude}",
-                //     "{$dbmaps[3]->latitude},{$dbmaps[3]->longitude}",
-            ),
+            // 'directions' => TRUE,
+            // 'directionsStart' => "{$dbmaps[2]->latitude},{$dbmaps[2]->longitude}",
+            // 'directionsEnd' => "{$dbmaps[0]->latitude},{$dbmaps[0]->longitude}",
+            // 'directionsWaypointArray' => array(
+            //     "{$dbmaps[1]->latitude},{$dbmaps[1]->longitude}",
+            // ),
             // 'directionsWaypointsOptimize' => TRUE,
         );
         $this->googlemaps->initialize($config);
