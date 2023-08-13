@@ -11,7 +11,7 @@
                         <div class="card-header">
                             <h4>List Tugas</h4>
                             <div class="card-header-action">
-                                <a href="<?= base_url('dbmaps/add') ?>" class="btn btn-primary">Add <i class="fas fa-plus"></i></a>
+                                <a href="<?= base_url('tugas/add') ?>" class="btn btn-primary">Add <i class="fas fa-plus"></i></a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -32,9 +32,9 @@
                                             <td>1</td>
                                             <td>Semarang Timur</td>
                                             <td>
-                                                <img alt="image" src="<?= base_url(); ?>template/assets/img/avatar/avatar-5.png" class="rounded-circle" width="35" data-toggle="tooltip" title="Wildan Ahdian">
+                                                <img alt="image" src="<?= base_url(); ?>template/assets/img/avatar/avatar-5.png" class="bunder" data-toggle="tooltip" title="Wildan Ahdian">
                                             </td>
-                                            <td><a href="#" class="btn btn-secondary">Detail</a></td>
+                                            <td><a href="#" class="btn btn-success">Detail</a></td>
                                         </tr>
                                         </tr>
                                     </tbody>

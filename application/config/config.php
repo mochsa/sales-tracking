@@ -26,7 +26,7 @@ setlocale(LC_ALL, 'IND');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8056/sales-tracking-ci3/';
+$config['base_url'] = 'http://localhost:8074/sales-tracking-ci3/';
 
 /*
 |--------------------------------------------------------------------------

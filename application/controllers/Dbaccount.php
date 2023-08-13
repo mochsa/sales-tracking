@@ -48,42 +48,8 @@ class Dbaccount extends CI_Controller
             );
             $this->load->view('template/v_wrapper', $data, FALSE);
         } else {
-            $name = $this->input->post('name');
-            $email = $this->input->post('email');
-
-            // Cek jika ada gambar yang akan diupload
-            $upload_image = $_FILES['image']['name'];
-
-            if ($upload_image) {
-                $config['overwrite'] = true;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size']     = '2048'; // 2MB
-                $config['upload_path'] = './template/assets/img/profile/';
-
-                $this->upload->initialize($config);
-
-                if ($this->upload->do_upload('image')) {
-                    // Delete old image
-                    $old_image = $data['user']['image'];
-                    if ($old_image != 'default.png') {
-                        unlink(FCPATH . '/template/assets/img/profile/' . $old_image);
-                    }
-
-                    $new_image = $this->upload->data('file_name');
-                    $this->db->set('image', $new_image);
-                } else {
-                    $this->session->set_flashdata('pesangagal', $this->upload->display_errors('Foto Gagal Diupload karena '));
-                }
-            }
-
-            $this->db->set('name', $name);
-            $this->db->where('email', $email);
-            $this->db->update('tbl_user');
-
+            $this->m_dbaccount->edit();
             $this->session->set_flashdata('pesansukses', 'Data Berhasil Diubah');
-            // $this->session->set_flashdata('pesansukses', 'Data Berhasil Diubah');
-            // $this->session->set_flashdata('pesangagal', $this->upload->display_errors('<p>', '</p>'));
-            // $this->m_dbaccount->edit();
             redirect('dashboard');
         }
     }

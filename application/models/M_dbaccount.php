@@ -44,7 +44,7 @@ class m_dbaccount extends CI_Model
                 $new_image = $this->upload->data('file_name');
                 $this->db->set('image', $new_image);
             } else {
-                $this->session->set_flashdata('pesangagal', $this->upload->display_errors('<p>', '</p>'));
+                $this->session->set_flashdata('pesangagal', $this->upload->display_errors('Foto Gagal Diupload karena '));
             }
         }
 

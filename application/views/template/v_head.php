@@ -30,8 +30,8 @@
             object-fit: cover;
             object-position: 50% 0;
             border-radius: 50%;
-            height: 30px;
-            width: 30px;
+            height: 35px;
+            width: 35px;
         }
 
         .bunder2 {

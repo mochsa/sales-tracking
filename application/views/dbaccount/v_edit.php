@@ -6,7 +6,7 @@
 
         <div class="section-body">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12">
                     <div class="card">
                         <?= form_open_multipart('dbaccount/edit'); ?>
                         <div class="card-header">
