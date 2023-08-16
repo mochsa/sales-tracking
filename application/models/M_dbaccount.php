@@ -4,6 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class m_dbaccount extends CI_Model
 {
+    // get all data
+    public function get()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_user');
+        $this->db->order_by('id', 'asc');
+        return $this->db->get()->result();
+    }
 
     // Get Data
     public function lists()

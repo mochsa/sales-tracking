@@ -5,6 +5,7 @@
         </div>
 
         <div class="section-body">
+            <div id="flash" data-flash="<?= $this->session->flashdata('pesan'); ?>"></div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
@@ -19,24 +20,38 @@
                                 <table class="table table-striped" id="table-1">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">
-                                                #
-                                            </th>
-                                            <th>Nama Tugas</th>
-                                            <th>Members</th>
+                                            <th>No</th>
+                                            <th>Sales</th>
+                                            <th>Nama Toko</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Semarang Timur</td>
-                                            <td>
-                                                <img alt="image" src="<?= base_url(); ?>template/assets/img/avatar/avatar-5.png" class="bunder" data-toggle="tooltip" title="Wildan Ahdian">
-                                            </td>
-                                            <td><a href="#" class="btn btn-success">Detail</a></td>
-                                        </tr>
-                                        </tr>
+                                        <?php $no = 1; ?>
+                                        <?php foreach ($tugas as $key => $row) { ?>
+                                            <tr>
+                                                <td><?= $no ?></td>
+                                                <td><?= $row['sales'] ?></td>
+                                                <td>
+                                                    <div class="badges">
+                                                        <?php foreach ($row['nama_toko'] as $nama_toko) { ?>
+                                                            <div class="badge badge-danger"><?= $nama_toko ?></div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="d-flex">
+                                                        <a href="<?= base_url('tugas/edit/' . $row['id_user']) ?>" class="btn btn-sm btn-warning mr-1">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+                                                        <a href="<?= base_url('tugas/delete/' . $row['id_user']) ?>" class="btn btn-sm btn-danger" id="tombol-hapus">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php $no++; ?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

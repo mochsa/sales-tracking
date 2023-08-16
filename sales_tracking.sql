@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2023 at 03:45 AM
+-- Generation Time: Aug 16, 2023 at 10:34 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_dbmaps` (
-  `id_maps` int(11) UNSIGNED NOT NULL,
+  `id_maps` int(11) NOT NULL,
   `nama_maps` varchar(50) DEFAULT NULL,
   `no_telpon` varchar(15) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
@@ -42,9 +42,31 @@ CREATE TABLE `tbl_dbmaps` (
 --
 
 INSERT INTO `tbl_dbmaps` (`id_maps`, `nama_maps`, `no_telpon`, `alamat`, `latitude`, `longitude`, `deskripsi`) VALUES
-(3, 'Toko A', '0821201012', 'Komplek Masjid Agung Kauman, 2CHF+528, Bangunharjo, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50139, Indonesia', '-6.972198213119912', '110.42265522962933', 'Toko pemilik Bapak Suratno penjual Rokok'),
-(4, 'Toko B', '08560201023', 'Jl. Mayor Jend. D.I. Panjaitan No.9, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134, Indonesia', '-6.985786775556099', '110.42063820845013', 'Toko milik Bu Sutarmi penjual toko kelontong'),
-(5, 'Smart Printer', '0854644887922', 'Jl. Mugas Dalam IX No.5, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249, Indonesia', '-6.99166509090616', '110.41535962110882', 'Toko printer bapak Jono customer tinta');
+(3, 'Toko Roti Azure', '0821201012', 'Komplek Masjid Agung Kauman, 2CHF+528, Bangunharjo, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50139, Indonesia', '-6.972198213119912', '110.42265522962933', 'Roti merk Sari Roti'),
+(4, 'Toko Roti Boris', '08560201023', 'Jl. Mayor Jend. D.I. Panjaitan No.9, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134, Indonesia', '-6.985786775556099', '110.42063820845013', 'Roti Abon'),
+(5, 'Smart Printer', '0854644887922', 'Jl. Mugas Dalam IX No.5, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249, Indonesia', '-6.99166509090616', '110.41535962110882', 'Toko printer bapak Jono customer tinta'),
+(7, 'Toko Roti Sulaiman', '0820201920120', 'Jl. Pringgading No.16, Brumbungan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135, Indonesia', '-6.982719799076844', '110.42853463178997', 'Roti AOKA'),
+(8, 'Toko Roti Cendana', '088481829392', '2C47+H8R, Jl. Dr. Kariadi, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia', '-6.993368936604788', '110.41312802320843', 'Roti Intisari ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tugas`
+--
+
+CREATE TABLE `tbl_tugas` (
+  `id_tugas` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_maps` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_tugas`
+--
+
+INSERT INTO `tbl_tugas` (`id_tugas`, `id_user`, `id_maps`) VALUES
+(41, 2, 3),
+(42, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -172,6 +194,12 @@ ALTER TABLE `tbl_dbmaps`
   ADD PRIMARY KEY (`id_maps`);
 
 --
+-- Indexes for table `tbl_tugas`
+--
+ALTER TABLE `tbl_tugas`
+  ADD PRIMARY KEY (`id_tugas`);
+
+--
 -- Indexes for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
@@ -209,7 +237,13 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `tbl_dbmaps`
 --
 ALTER TABLE `tbl_dbmaps`
-  MODIFY `id_maps` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_maps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `tbl_tugas`
+--
+ALTER TABLE `tbl_tugas`
+  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

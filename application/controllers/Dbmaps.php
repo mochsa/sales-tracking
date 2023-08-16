@@ -37,7 +37,9 @@ class Dbmaps extends CI_Controller
             'map_height' => '600px'
         );
         $this->googlemaps->initialize($config);
-        //--------------------------------------------------
+
+
+        //--------------------- Marker ------------------
         $marker = array(
             'position' => '-6.981782663363796, 110.40922272688273',
             'animation' => 'DROP',
@@ -45,7 +47,6 @@ class Dbmaps extends CI_Controller
             'ondragend' => 'setToForm(event.latLng.lat(), event.latLng.lng());'
         );
         $this->googlemaps->add_marker($marker);
-        //--------------------------------------------------
 
 
         // ------------------ Form Validation ------------------

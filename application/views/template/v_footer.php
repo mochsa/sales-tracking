@@ -24,15 +24,21 @@
 <script src="<?= base_url() ?>/template/node_modules/izitoast/dist/js/iziToast.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/summernote/dist/summernote-bs4.js"></script>
-<script src="<?= base_url() ?>/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
 <script src="<?= base_url() ?>/template/node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.min.js"></script>
-<script src="<?= base_url() ?>/template/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/select2/dist/js/select2.full.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/selectric/public/jquery.selectric.min.js"></script>
+<script src="<?= base_url() ?>/template/node_modules/cleave.js/dist/cleave.min.js"></script>
+
+
 
 <!-- Template JS File -->
 <script src="<?= base_url() ?>/template/assets/js/scripts.js"></script>
 <script src="<?= base_url() ?>/template/assets/js/custom.js"></script>
 
+<script src="<?= base_url() ?>/template/assets/js/page/forms-advanced-forms.js"></script>
+
 <!-- Scripting JS -->
+
 <script>
     function setToForm(latitude, longitude, marker) {
         $('input[name="latitude"]').val(latitude); // Set input lat
@@ -73,7 +79,6 @@
         }],
     });
 
-    $("select").selectric();
     $.uploadPreview({
         input_field: "#image-upload", // Default: .image-upload
         preview_box: "#image-preview", // Default: .image-preview
@@ -83,7 +88,6 @@
         no_label: false, // Default: false
         success_callback: null // Default: null
     });
-    $(".inputtags").tagsinput('items');
 </script>
 <script>
     var flashgagal = $('#flashgagal').data('flashgagal');
@@ -123,6 +127,32 @@
                     window.location = link;
                 }
             });
+    });
+
+    $(document).on('click', '#calc-route-btn', function(e) {
+        e.preventDefault();
+        var startSelect = $('#start-location');
+        var endSelect = $('#end-location');
+        var startValue = startSelect.val();
+        var endValue = endSelect.val();
+
+        $.ajax({
+            url: window.location.href,
+            type: 'POST',
+            data: {
+                'start-location': startValue,
+                'end-location': endValue
+            },
+            success: function(result) {
+                startSelect.replaceWith($(result).find('#start-location'));
+                endSelect.replaceWith($(result).find('#end-location'));
+                var mapHtml = $(result).find('#map-canvas').html();
+                $('#map-canvas').html(mapHtml);
+            },
+            error: function(xhr, status, error) {
+                alert('Terjadi kesalahan! Silakan coba lagi nanti.');
+            }
+        });
     });
 </script>
 </body>

@@ -23,10 +23,11 @@ class Gmaps extends CI_Controller
             'directions' => TRUE,
             'directionsStart' => 'auto',
             'directionsEnd' => "{$dbmaps[0]->latitude},{$dbmaps[0]->longitude}",
-            // 'directionsWaypointArray' => array(
-            //     "{$dbmaps[1]->latitude},{$dbmaps[1]->longitude}",
-            // ),
-            'directionsWaypointsOptimize' => TRUE,
+            'directionsWaypointArray' => array(
+                "{$dbmaps[2]->latitude},{$dbmaps[2]->longitude}",
+                "{$dbmaps[1]->latitude},{$dbmaps[1]->longitude}",
+                "{$dbmaps[3]->latitude},{$dbmaps[3]->longitude}",
+            ),
         );
         $this->googlemaps->initialize($config);
 
