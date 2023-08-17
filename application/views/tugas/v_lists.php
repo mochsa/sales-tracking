@@ -19,7 +19,7 @@
                             <div class="table-responsive">
                                 <table class="table table-striped" id="table-1">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th>No</th>
                                             <th>Sales</th>
                                             <th>Nama Toko</th>

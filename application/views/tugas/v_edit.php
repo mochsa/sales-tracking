@@ -1,9 +1,6 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <div class="section-header-back">
-                <a href="<?= site_url('tugas') ?>" class="btn"><i class="fas fa-arrow-left"></i></a>
-            </div>
             <h1><?= $section; ?></h1>
         </div>
 
@@ -15,14 +12,26 @@
                         <h4>Add data Maps</h4>
                     </div>
                     <div class="card-body">
-                        <form action="<?= base_url('tugas/add') ?>" method="post">
+                        <form action="<?= base_url('tugas/edit/' . $selected_sales) ?>" method="post">
                             <div class="form-group">
                                 <label>Pilih Sales</label>
-                                <select class="form-control select2" name="sales" required>
-                                    <option value="" disabled selected>-- Pilih Sales --</option>
+
+                                <!-- DISABLED SELECTED -->
+                                <select class="form-control select2" disabled>
                                     <?php foreach ($sales as $data) : ?>
                                         <?php if ($data->role_id != 1) : ?>
-                                            <option value="<?= $data->id; ?>">
+                                            <option value="<?= $data->id; ?>" <?= ($data->id == $selected_sales) ? 'selected' : ''; ?>>
+                                                <?= $data->name; ?>
+                                            </option>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </select>
+
+                                <!-- HIDDEN SELECTED -->
+                                <select hidden name="sales">
+                                    <?php foreach ($sales as $data) : ?>
+                                        <?php if ($data->role_id != 1) : ?>
+                                            <option value="<?= $data->id; ?>" <?= ($data->id == $selected_sales) ? 'selected' : ''; ?>>
                                                 <?= $data->name; ?>
                                             </option>
                                         <?php endif; ?>
@@ -33,18 +42,20 @@
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 1</label>
                                     <select class="form-control select2" name="toko[1]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
                                         <?php foreach ($toko as $data) : ?>
-                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_1) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 2</label>
                                     <select class="form-control select2" name="toko[2]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
                                         <?php foreach ($toko as $data) : ?>
-                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_2) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -53,18 +64,20 @@
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 3</label>
                                     <select class="form-control select2" name="toko[3]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
                                         <?php foreach ($toko as $data) : ?>
-                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_3) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 4</label>
                                     <select class="form-control select2" name="toko[4]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
                                         <?php foreach ($toko as $data) : ?>
-                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_4) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
