@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2023 at 10:34 PM
+-- Generation Time: Aug 17, 2023 at 06:38 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -46,7 +46,13 @@ INSERT INTO `tbl_dbmaps` (`id_maps`, `nama_maps`, `no_telpon`, `alamat`, `latitu
 (4, 'Toko Roti Boris', '08560201023', 'Jl. Mayor Jend. D.I. Panjaitan No.9, Miroto, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50134, Indonesia', '-6.985786775556099', '110.42063820845013', 'Roti Abon'),
 (5, 'Smart Printer', '0854644887922', 'Jl. Mugas Dalam IX No.5, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249, Indonesia', '-6.99166509090616', '110.41535962110882', 'Toko printer bapak Jono customer tinta'),
 (7, 'Toko Roti Sulaiman', '0820201920120', 'Jl. Pringgading No.16, Brumbungan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135, Indonesia', '-6.982719799076844', '110.42853463178997', 'Roti AOKA'),
-(8, 'Toko Roti Cendana', '088481829392', '2C47+H8R, Jl. Dr. Kariadi, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia', '-6.993368936604788', '110.41312802320843', 'Roti Intisari ');
+(8, 'Toko Roti Cendana', '088481829392', '2C47+H8R, Jl. Dr. Kariadi, Randusari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50244, Indonesia', '-6.993368936604788', '110.41312802320843', 'Roti Intisari '),
+(9, 'TB Munawar', '085648799852', '2CG2+W5C, Jl. Madukoro Raya, Krobokan, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50141, Indonesia', '-6.972538996936401', '110.40046799665814', 'Toko Bangunan Pak Munawar'),
+(10, 'TB Halimah', '0291478856987', 'Jl. Puri Anjasmoro No.9, RT.3, Tawangmas, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50144, Indonesia', '-6.974711487938754', '110.39068329817181', 'Toko Bangunan milik Bu Halimah'),
+(11, 'TB Sumber Rejeki', '085996554789', '2CM4+P4H, Jl. Brotojoyo Bar. III, Panggung Kidul, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50178, Indonesia', '-6.965638076354014', '110.4053603459013', 'Toko Bangunan milik bapak haryo'),
+(12, 'Toko Saudara Semarang', '08556547895', 'Jl. Gurami I No.531, Kuningan, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50176, Indonesia', '-6.965851069249294', '110.41428673750286', 'Toko Material milik bapak Subago'),
+(13, 'Bintang Bumi Asri', '085665478955', 'Jl. Perbalan Purwosari V No.746, Purwosari, Kec. Semarang Utara, Kota Semarang, Jawa Tengah 50172, Indonesia', '-6.970110906835618', '110.4152308750761', 'Toko Material milik Bu Haji Romlah'),
+(14, 'Toko Bangunan Mutiara', '08565447899', '2CR3+CWC, Panggung Lor, Semarang Utara, Semarang City, Central Java 50177, Indonesia', '-6.9588648518493335', '110.40484536177044', 'Toko Bangunan dan Material milik Bu Mutia');
 
 -- --------------------------------------------------------
 
@@ -65,8 +71,14 @@ CREATE TABLE `tbl_tugas` (
 --
 
 INSERT INTO `tbl_tugas` (`id_tugas`, `id_user`, `id_maps`) VALUES
-(41, 2, 3),
-(42, 2, 4);
+(140, 4, 11),
+(141, 4, 13),
+(142, 4, 12),
+(143, 4, 4),
+(144, 3, 8),
+(145, 3, 5),
+(146, 3, 4),
+(147, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -237,13 +249,13 @@ ALTER TABLE `user_sub_menu`
 -- AUTO_INCREMENT for table `tbl_dbmaps`
 --
 ALTER TABLE `tbl_dbmaps`
-  MODIFY `id_maps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_maps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_tugas`
 --
 ALTER TABLE `tbl_tugas`
-  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
