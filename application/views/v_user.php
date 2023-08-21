@@ -5,8 +5,8 @@
         </div>
 
         <div class="section-body">
-            <div id="flash" data-flash="<?= $this->session->flashdata('pesan'); ?>"></div>
             <div id="flash" data-flash="<?= $this->session->flashdata('pesansukses'); ?>"></div>
+            <div id="flashgagal" data-flashgagal="<?= $this->session->flashdata('pesangagal'); ?>"></div>
             <h2 class="section-title">Hi, <?= $user['name']; ?></h2>
             <p class="section-lead">
                 Selamat datang di Dashboard Sales Tracking.

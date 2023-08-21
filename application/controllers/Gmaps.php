@@ -29,6 +29,8 @@ class Gmaps extends CI_Controller
             $marker = array(
                 'position' => "{$value->latitude},{$value->longitude}",
                 'animation' => 'DROP',
+                'dragable' => false,
+                'icon' => base_url('/template/assets/img/avatar/map-pointer.png'),
                 'infowindow_content' =>
                 '<div class="card m-0" style="width:150px;">' .
                     '<div class="card-header p-0 mb-1" style="min-height: 0px;">' .

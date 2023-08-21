@@ -37,7 +37,7 @@ class m_dbaccount extends CI_Model
         if ($upload_image) {
             $config['overwrite'] = true;
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config['max_size']     = '2048'; // 2MB
+            $config['max_size']     = '4096'; // 2MB
             $config['upload_path'] = './template/assets/img/profile/';
 
             $this->upload->initialize($config);

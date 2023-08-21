@@ -29,11 +29,13 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+
+                            <!-- TOKO 1 & TOKO 2 -->
                             <div class="row">
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 1</label>
                                     <select class="form-control select2" name="toko[1]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
                                         <?php endforeach; ?>
@@ -42,18 +44,20 @@
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 2</label>
                                     <select class="form-control select2" name="toko[2]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- TOKO 3 & TOKO 4 -->
                             <div class="row">
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 3</label>
                                     <select class="form-control select2" name="toko[3]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
                                         <?php endforeach; ?>
@@ -62,13 +66,93 @@
                                 <div class="form-group col-12 col-md-12 col-lg-6">
                                     <label>Toko 4</label>
                                     <select class="form-control select2" name="toko[4]" required>
-                                        <option value="" disabled selected>-- Pilih Maps --</option>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- TOKO 5 & TOKO 6 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 5</label>
+                                    <select class="form-control select2" name="toko[5]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 6</label>
+                                    <select class="form-control select2" name="toko[6]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKO 7 & TOKO 8 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 7</label>
+                                    <select class="form-control select2" name="toko[7]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 8</label>
+                                    <select class="form-control select2" name="toko[8]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKO 9 & TOK 10 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 9</label>
+                                    <select class="form-control select2" name="toko[9]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 10</label>
+                                    <select class="form-control select2" name="toko[10]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKO 11 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Toko 11</label>
+                                    <select class="form-control select2" name="toko[11]" required>
+                                        <option value="" disabled selected>-- Pilih Rute --</option>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>"><?= $data->nama_maps; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="buttons">
                                     <a href="<?= base_url('tugas'); ?>" class="btn btn-icon icon-left btn-danger"><i class="fas fa-chevron-left"></i> Back</a>

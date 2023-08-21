@@ -36,7 +36,7 @@ class Tugas extends CI_Controller
 
 
         $data = array(
-            'title' => 'Tugas',
+            'title' => 'Master Tugas',
             'section' => 'List Tugas',
             'user' => $user,
             'map' => $maps,
@@ -78,6 +78,8 @@ class Tugas extends CI_Controller
                 $marker = array(
                     'position' => "{$value->latitude},{$value->longitude}",
                     'animation' => 'DROP',
+                    'draggable' => false,
+                    'icon' => base_url('/template/assets/img/avatar/map-pointer.png'),
                     'infowindow_content' =>
                     '<div class="card m-0" style="width:150px;">' .
                         '<div class="card-header p-0 mb-1" style="min-height: 0px;">' .
@@ -96,13 +98,12 @@ class Tugas extends CI_Controller
                         '</div>',
                 );
                 $this->googlemaps->add_marker($marker);
-            }
+            };
 
 
             $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
             $maps = $this->googlemaps->create_map();
             $sales = $this->m_dbaccount->get();
-
 
 
             $data = array(
@@ -138,6 +139,7 @@ class Tugas extends CI_Controller
         } else {
             $id_user = $this->uri->segment(3); // Get the id_user from the URL parameter
             $tugas = $this->m_tugas->get_tugas_by_user($id_user);
+            $toko = $this->m_dbmaps->lists();
 
             // Get the latitude and longitude values for the retrieved id_maps values
             $latlong_start = $this->m_tugas->get_latlong_by_id($tugas[0]->id_maps);
@@ -163,13 +165,19 @@ class Tugas extends CI_Controller
             $user = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
             $maps = $this->googlemaps->create_map();
             $sales = $this->m_dbaccount->get();
-            $toko = $this->m_dbmaps->lists();
 
             $selected_sales = $id_user;
             $selected_toko_1 = $tugas[0]->id_maps;
             $selected_toko_2 = $tugas[1]->id_maps;
             $selected_toko_3 = $tugas[2]->id_maps;
             $selected_toko_4 = $tugas[3]->id_maps;
+            $selected_toko_5 = $tugas[4]->id_maps;
+            $selected_toko_6 = $tugas[5]->id_maps;
+            $selected_toko_7 = $tugas[6]->id_maps;
+            $selected_toko_8 = $tugas[7]->id_maps;
+            $selected_toko_9 = $tugas[8]->id_maps;
+            $selected_toko_10 = $tugas[9]->id_maps;
+            $selected_toko_11 = $tugas[10]->id_maps;
 
 
             $data = array(
@@ -185,6 +193,13 @@ class Tugas extends CI_Controller
                 'selected_toko_2' => $selected_toko_2,
                 'selected_toko_3' => $selected_toko_3,
                 'selected_toko_4' => $selected_toko_4,
+                'selected_toko_5' => $selected_toko_5,
+                'selected_toko_6' => $selected_toko_6,
+                'selected_toko_7' => $selected_toko_7,
+                'selected_toko_8' => $selected_toko_8,
+                'selected_toko_9' => $selected_toko_9,
+                'selected_toko_10' => $selected_toko_10,
+                'selected_toko_11' => $selected_toko_11,
                 'isi' => 'tugas/v_edit'
             );
             $this->load->view('template/v_wrapper', $data, FALSE);

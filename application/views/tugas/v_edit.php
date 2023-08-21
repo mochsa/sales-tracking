@@ -38,9 +38,11 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
+
+                            <!-- TOKO 1 & TOK0 2 -->
                             <div class="row">
                                 <div class="form-group col-12 col-md-12 col-lg-6">
-                                    <label>Toko 1</label>
+                                    <label>Rute A</label>
                                     <select class="form-control select2" name="toko[1]" required>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_1) ? 'selected' : ''; ?>>
@@ -50,7 +52,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-12 col-lg-6">
-                                    <label>Toko 2</label>
+                                    <label>Rute B</label>
                                     <select class="form-control select2" name="toko[2]" required>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_2) ? 'selected' : ''; ?>>
@@ -60,9 +62,11 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- TOKO 3 & TOKO 4 -->
                             <div class="row">
                                 <div class="form-group col-12 col-md-12 col-lg-6">
-                                    <label>Toko 3</label>
+                                    <label>Rute C</label>
                                     <select class="form-control select2" name="toko[3]" required>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_3) ? 'selected' : ''; ?>>
@@ -72,7 +76,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-12 col-lg-6">
-                                    <label>Toko 4</label>
+                                    <label>Rute D</label>
                                     <select class="form-control select2" name="toko[4]" required>
                                         <?php foreach ($toko as $data) : ?>
                                             <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_4) ? 'selected' : ''; ?>>
@@ -82,6 +86,93 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <!-- TOKO 5 & TOKO 6 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute E</label>
+                                    <select class="form-control select2" name="toko[5]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_5) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute F</label>
+                                    <select class="form-control select2" name="toko[6]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_6) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKO 7 & TOKO 8 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute G</label>
+                                    <select class="form-control select2" name="toko[7]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_7) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute H</label>
+                                    <select class="form-control select2" name="toko[8]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_8) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKO 9 & TOKO 10 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute I</label>
+                                    <select class="form-control select2" name="toko[9]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_9) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute J</label>
+                                    <select class="form-control select2" name="toko[10]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_10) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- TOKOK 11 -->
+                            <div class="row">
+                                <div class="form-group col-12 col-md-12 col-lg-6">
+                                    <label>Rute K</label>
+                                    <select class="form-control select2" name="toko[11]" required>
+                                        <?php foreach ($toko as $data) : ?>
+                                            <option value="<?= $data->id_maps; ?>" <?= ($data->id_maps == $selected_toko_11) ? 'selected' : ''; ?>>
+                                                <?= $data->nama_maps; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="buttons">
                                     <a href="<?= base_url('tugas'); ?>" class="btn btn-icon icon-left btn-danger"><i class="fas fa-chevron-left"></i> Back</a>

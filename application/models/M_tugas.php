@@ -31,7 +31,7 @@ class M_tugas extends CI_Model
 
     public function get_tugas_by_user($id_user)
     {
-        $this->db->select('tbl_tugas.*, tbl_user.name as sales, tbl_dbmaps.nama_maps as nama_toko, tbl_dbmaps.nama_maps as nama_toko, tbl_dbmaps.latitude, tbl_dbmaps.longitude');
+        $this->db->select('tbl_tugas.*, tbl_user.name as sales, tbl_dbmaps.nama_maps as nama_toko, tbl_dbmaps.latitude, tbl_dbmaps.longitude');
         $this->db->from('tbl_tugas');
         $this->db->join('tbl_user', 'tbl_user.id = tbl_tugas.id_user');
         $this->db->join('tbl_dbmaps', 'tbl_dbmaps.id_maps = tbl_tugas.id_maps');

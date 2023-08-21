@@ -30,10 +30,12 @@ class Dbmaps extends CI_Controller
 
     public function add()
     {
+        $dbmaps = $this->m_dbmaps->lists();
+
         // ------------------ Google Maps ------------------
         $config = array(
             'center' => '-6.981782663363796, 110.40922272688273',
-            'zoom' => '15',
+            'zoom' => 'auto',
             'map_height' => '600px'
         );
         $this->googlemaps->initialize($config);
@@ -48,6 +50,31 @@ class Dbmaps extends CI_Controller
         );
         $this->googlemaps->add_marker($marker);
 
+        foreach ($dbmaps as $value) {
+            $marker = array(
+                'position' => "{$value->latitude},{$value->longitude}",
+                'animation' => 'DROP',
+                'dragable' => false,
+                'icon' => base_url('/template/assets/img/avatar/map-pointer.png'),
+                'infowindow_content' =>
+                '<div class="card m-0" style="width:150px;">' .
+                    '<div class="card-header p-0 mb-1" style="min-height: 0px;">' .
+                    '<h4 style="line-height: 16px; color: #000;">' . $value->nama_maps . '</h4>' .
+                    '</div>' .
+                    '<hr class="m-0">' .
+                    '<div class="card-body p-0 mt-1">' .
+                    $value->alamat .
+                    '</div>' .
+                    '<div class="card-body p-0 mt-1">' .
+                    '<b>No Telpon : </b>' . $value->no_telpon .
+                    '</div>' .
+                    '<div class="card-body p-0 mt-1">' .
+                    '<b>Deskripsi : </b>' . $value->deskripsi .
+                    '</div>' .
+                    '</div>',
+            );
+            $this->googlemaps->add_marker($marker);
+        }
 
         // ------------------ Form Validation ------------------
         $this->form_validation->set_rules('nama_maps', 'Nama Maps', 'required');
